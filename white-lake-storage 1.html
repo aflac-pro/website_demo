@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>White Lake Storage Units | Clean, Secure & Affordable Self Storage</title>
+<meta name="description" content="White Lake Storage Units offers clean, affordable drive-up self storage with 6-month and year-long leases. Access by appointment. Call (920) 250-2944.">
+<style>
+  :root {
+    --navy: #0f2b46;
+    --blue: #1c6ea4;
+    --lake: #2a9db5;
+    --accent: #f4a72c;
+    --light: #f5f8fa;
+    --gray: #64748b;
+    --white: #ffffff;
+    --radius: 12px;
+    --shadow: 0 10px 30px rgba(15, 43, 70, 0.12);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: var(--navy);
+    line-height: 1.6;
+    background: var(--white);
+  }
+
+  a { text-decoration: none; color: inherit; }
+
+  .container { width: 90%; max-width: 1160px; margin: 0 auto; }
+
+  /* HEADER */
+  header {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(255,255,255,0.97);
+    backdrop-filter: blur(6px);
+    box-shadow: 0 2px 12px rgba(15,43,70,0.08);
+  }
+  .nav {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 0;
+  }
+  .logo { display: flex; align-items: center; gap: 12px; font-weight: 700; font-size: 1.25rem; }
+  .logo-mark {
+    width: 42px; height: 42px; border-radius: 10px;
+    background: linear-gradient(135deg, var(--blue), var(--lake));
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; font-size: 1.3rem;
+  }
+  .logo span { color: var(--blue); }
+  nav ul { display: flex; list-style: none; gap: 30px; align-items: center; }
+  nav ul li a { font-weight: 500; color: var(--navy); transition: color .2s; }
+  nav ul li a:hover { color: var(--blue); }
+  .btn {
+    display: inline-block; padding: 12px 26px; border-radius: 50px;
+    font-weight: 600; cursor: pointer; border: none; transition: all .25s;
+    font-size: 1rem;
+  }
+  .btn-primary { background: var(--accent); color: var(--navy); }
+  .btn-primary:hover { background: #e0951c; transform: translateY(-2px); }
+  .btn-outline { background: transparent; border: 2px solid #fff; color: #fff; }
+  .btn-outline:hover { background: #fff; color: var(--navy); }
+  .menu-toggle { display: none; font-size: 1.6rem; background: none; border: none; color: var(--navy); cursor: pointer; }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(135deg, rgba(15,43,70,0.88), rgba(28,110,164,0.82)),
+                radial-gradient(circle at 80% 20%, rgba(42,157,181,0.5), transparent 60%);
+    color: #fff; position: relative; overflow: hidden;
+  }
+  .hero::after {
+    content: ""; position: absolute; bottom: -1px; left: 0; width: 100%; height: 90px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100' preserveAspectRatio='none'%3E%3Cpath fill='%23ffffff' d='M0,40 C360,120 1080,-40 1440,40 L1440,100 L0,100 Z'/%3E%3C/svg%3E") no-repeat;
+    background-size: cover;
+  }
+  .hero-inner { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: center; padding: 90px 0 130px; }
+  .hero h1 { font-size: 3.1rem; line-height: 1.15; margin-bottom: 18px; }
+  .hero h1 .highlight { color: var(--accent); }
+  .hero p { font-size: 1.15rem; opacity: 0.92; margin-bottom: 30px; max-width: 520px; }
+  .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+  .hero-badges { display: flex; gap: 26px; margin-top: 38px; flex-wrap: wrap; }
+  .hero-badges div { font-size: 0.95rem; }
+  .hero-badges strong { display: block; font-size: 1.7rem; color: var(--accent); }
+
+  /* QUOTE CARD */
+  .quote-card {
+    background: #fff; color: var(--navy); border-radius: var(--radius);
+    box-shadow: var(--shadow); padding: 30px;
+  }
+  .quote-card h3 { margin-bottom: 6px; font-size: 1.35rem; }
+  .quote-card p.sub { color: var(--gray); margin-bottom: 20px; font-size: 0.95rem; }
+  .form-group { margin-bottom: 16px; }
+  .form-group label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 6px; }
+  .form-group input, .form-group select {
+    width: 100%; padding: 12px 14px; border: 1px solid #d6dfe6; border-radius: 8px;
+    font-size: 0.98rem; font-family: inherit;
+  }
+  .form-group input:focus, .form-group select:focus { outline: none; border-color: var(--blue); }
+  .quote-card .btn-primary { width: 100%; }
+
+  /* SECTION BASE */
+  section { padding: 80px 0; }
+  .section-head { text-align: center; max-width: 640px; margin: 0 auto 54px; }
+  .section-head span.eyebrow {
+    color: var(--blue); font-weight: 700; text-transform: uppercase;
+    letter-spacing: 1.5px; font-size: 0.85rem;
+  }
+  .section-head h2 { font-size: 2.3rem; margin: 10px 0 14px; }
+  .section-head p { color: var(--gray); font-size: 1.05rem; }
+
+  /* FEATURES */
+  .features { background: var(--light); }
+  .feature-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 26px; }
+  .feature-card {
+    background: #fff; border-radius: var(--radius); padding: 32px 26px;
+    box-shadow: 0 6px 18px rgba(15,43,70,0.06); transition: transform .25s;
+    text-align: center;
+  }
+  .feature-card:hover { transform: translateY(-6px); }
+  .feature-icon {
+    width: 60px; height: 60px; margin: 0 auto 18px; border-radius: 14px;
+    display: flex; align-items: center; justify-content: center; font-size: 1.7rem;
+    background: linear-gradient(135deg, var(--blue), var(--lake)); color: #fff;
+  }
+  .feature-card h3 { font-size: 1.15rem; margin-bottom: 8px; }
+  .feature-card p { color: var(--gray); font-size: 0.95rem; }
+
+  /* UNIT SIZES / PRICING */
+  .unit-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 26px; }
+  .unit-card {
+    border: 1px solid #e2e9ef; border-radius: var(--radius); overflow: hidden;
+    transition: all .25s; display: flex; flex-direction: column;
+  }
+  .unit-card:hover { box-shadow: var(--shadow); transform: translateY(-4px); }
+  .unit-card.popular { border-color: var(--accent); box-shadow: var(--shadow); }
+  .unit-visual {
+    background: linear-gradient(135deg, var(--navy), var(--blue));
+    color: #fff; padding: 30px 24px; text-align: center; position: relative;
+  }
+  .unit-card.popular .unit-visual { background: linear-gradient(135deg, var(--lake), var(--blue)); }
+  .popular-tag {
+    position: absolute; top: 12px; right: 12px; background: var(--accent);
+    color: var(--navy); font-size: 0.72rem; font-weight: 700; padding: 4px 10px;
+    border-radius: 20px; text-transform: uppercase; letter-spacing: .5px;
+  }
+  .unit-visual .size { font-size: 1.6rem; font-weight: 700; }
+  .unit-visual .dim { opacity: 0.85; font-size: 0.9rem; }
+  .unit-body { padding: 24px; text-align: center; flex: 1; display: flex; flex-direction: column; }
+  .unit-body .price { font-size: 2rem; font-weight: 700; color: var(--blue); }
+  .unit-body .price span { font-size: 0.9rem; color: var(--gray); font-weight: 400; }
+  .unit-body ul { list-style: none; margin: 18px 0 24px; text-align: left; }
+  .unit-body ul li { padding: 6px 0; color: var(--gray); font-size: 0.93rem; display: flex; gap: 8px; }
+  .unit-body ul li::before { content: "✓"; color: var(--lake); font-weight: 700; }
+  .unit-body .btn { margin-top: auto; }
+  .btn-block { background: var(--navy); color: #fff; width: 100%; }
+  .btn-block:hover { background: var(--blue); }
+
+  /* ABOUT / WHY */
+  .about { background: var(--light); }
+  .about-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+  .about-visual {
+    background: linear-gradient(135deg, var(--blue), var(--lake));
+    border-radius: var(--radius); min-height: 380px; box-shadow: var(--shadow);
+    display: flex; align-items: center; justify-content: center; color: #fff;
+    text-align: center; padding: 40px; position: relative; overflow: hidden;
+  }
+  .about-visual .big-icon { font-size: 5rem; margin-bottom: 12px; }
+  .about-text h2 { font-size: 2.2rem; margin-bottom: 18px; }
+  .about-text p { color: var(--gray); margin-bottom: 18px; }
+  .check-list { list-style: none; }
+  .check-list li { padding: 8px 0; display: flex; gap: 12px; align-items: flex-start; }
+  .check-list li .tick {
+    flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%;
+    background: var(--lake); color: #fff; display: flex; align-items: center;
+    justify-content: center; font-size: 0.85rem; margin-top: 3px;
+  }
+
+  /* CTA BANNER */
+  .cta-banner {
+    background: linear-gradient(135deg, var(--navy), var(--blue));
+    color: #fff; text-align: center; border-radius: var(--radius);
+    padding: 56px 30px; box-shadow: var(--shadow);
+  }
+  .cta-banner h2 { font-size: 2.2rem; margin-bottom: 12px; }
+  .cta-banner p { opacity: 0.9; margin-bottom: 28px; font-size: 1.1rem; }
+
+  /* CONTACT */
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
+  .contact-info h3 { font-size: 1.6rem; margin-bottom: 20px; }
+  .contact-item { display: flex; gap: 16px; margin-bottom: 22px; align-items: flex-start; }
+  .contact-item .ci-icon {
+    width: 46px; height: 46px; border-radius: 10px; flex-shrink: 0;
+    background: var(--light); display: flex; align-items: center;
+    justify-content: center; font-size: 1.3rem; color: var(--blue);
+  }
+  .contact-item strong { display: block; }
+  .contact-item span { color: var(--gray); }
+  .hours-table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+  .hours-table td { padding: 7px 0; border-bottom: 1px solid #eef2f5; color: var(--gray); font-size: 0.95rem; }
+  .hours-table td:last-child { text-align: right; font-weight: 600; color: var(--navy); }
+  .map-box {
+    background: linear-gradient(135deg, #dfeaf0, #c3dbe6); border-radius: var(--radius);
+    min-height: 340px; display: flex; flex-direction: column; align-items: center;
+    justify-content: center; color: var(--navy); text-align: center; padding: 30px;
+  }
+  .map-box .big-icon { font-size: 3.5rem; margin-bottom: 10px; }
+
+  /* FOOTER */
+  footer { background: var(--navy); color: #cdd9e3; padding: 60px 0 24px; }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.3fr; gap: 40px; margin-bottom: 40px; }
+  .footer-grid h4 { color: #fff; margin-bottom: 16px; font-size: 1.05rem; }
+  .footer-grid ul { list-style: none; }
+  .footer-grid ul li { padding: 6px 0; }
+  .footer-grid ul li a:hover { color: var(--accent); }
+  .footer-brand p { margin-top: 14px; font-size: 0.95rem; max-width: 280px; }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.12); padding-top: 22px;
+    text-align: center; font-size: 0.88rem; color: #9fb2c2;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 960px) {
+    .hero-inner { grid-template-columns: 1fr; }
+    .feature-grid { grid-template-columns: repeat(2, 1fr); }
+    .unit-grid { grid-template-columns: repeat(2, 1fr); }
+    .about-inner, .contact-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 620px) {
+    nav ul { display: none; }
+    .menu-toggle { display: block; }
+    .hero h1 { font-size: 2.3rem; }
+    .feature-grid, .unit-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .section-head h2 { font-size: 1.8rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="container nav">
+    <div class="logo">
+      <div class="logo-mark">◆</div>
+      White Lake Storage
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#features">Why Us</a></li>
+        <li><a href="#units">Units &amp; Pricing</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#quote" class="btn btn-primary">Reserve Now</a></li>
+      </ul>
+    </nav>
+    <button class="menu-toggle" onclick="document.querySelector('nav ul').style.display = (document.querySelector('nav ul').style.display==='flex'?'none':'flex')">☰</button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="container hero-inner">
+    <div class="hero-text">
+      <h1>Clean, Secure &amp; Affordable <span class="highlight">Self Storage</span> by the Lake</h1>
+      <p>Whether you're moving, decluttering, or making room for the boat, White Lake Storage offers clean, affordable drive-up units with simple 6-month and year-long lease options.</p>
+      <div class="hero-actions">
+        <a href="#units" class="btn btn-primary">View Units &amp; Pricing</a>
+        <a href="#quote" class="btn btn-outline">Get a Free Quote</a>
+      </div>
+      <div class="hero-badges">
+        <div><strong>Since</strong> 2023</div>
+        <div><strong>5★</strong> Local Rating</div>
+        <div><strong>Drive-Up</strong> Convenience</div>
+      </div>
+    </div>
+
+    <!-- QUOTE CARD -->
+    <div class="quote-card" id="quote">
+      <h3>Reserve Your Unit</h3>
+      <p class="sub">Lock in today's rate. No obligation, no move-in fees.</p>
+      <form onsubmit="handleReserve(event)">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" placeholder="Jane Doe" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input type="text" id="phone" placeholder="(920) 250-2944" required>
+        </div>
+        <div class="form-group">
+          <label for="size">Unit Size</label>
+          <select id="size">
+            <option>5×5 — Small (Closet)</option>
+            <option>10×10 — Medium (1 Bedroom)</option>
+            <option>10×20 — Large (Garage)</option>
+            <option>10×30 — X-Large (House)</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Reserve My Unit</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features" id="features">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Why Choose Us</span>
+      <h2>Storage Made Simple &amp; Secure</h2>
+      <p>Everything you'd expect from a premium facility, at prices that fit your budget.</p>
+    </div>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🚚</div>
+        <h3>Drive-Up Access</h3>
+        <p>Pull right up to your unit for fast, easy loading and unloading.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📅</div>
+        <h3>6-Month &amp; Annual Leases</h3>
+        <p>Simple, predictable terms with 6-month and year-long lease options.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">💰</div>
+        <h3>Affordable Rates</h3>
+        <p>Straightforward pricing with no hidden fees or surprise charges.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🤝</div>
+        <h3>Locally Operated</h3>
+        <p>Proudly serving the White Lake community with friendly, personal service.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- UNITS / PRICING -->
+<section id="units">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Units &amp; Pricing</span>
+      <h2>Find the Right Size for You</h2>
+      <p>Not sure what you need? Give us a call and we'll help you pick the perfect fit.</p>
+    </div>
+    <div class="unit-grid">
+      <div class="unit-card">
+        <div class="unit-visual">
+          <div class="size">5 × 5</div>
+          <div class="dim">25 sq ft • Small</div>
+        </div>
+        <div class="unit-body">
+          <div class="price">$39<span>/mo</span></div>
+          <ul>
+            <li>Boxes &amp; seasonal items</li>
+            <li>Fits a small closet</li>
+            <li>Drive-up available</li>
+          </ul>
+          <a href="#quote" class="btn btn-block">Reserve</a>
+        </div>
+      </div>
+
+      <div class="unit-card popular">
+        <div class="unit-visual">
+          <span class="popular-tag">Most Popular</span>
+          <div class="size">10 × 10</div>
+          <div class="dim">100 sq ft • Medium</div>
+        </div>
+        <div class="unit-body">
+          <div class="price">$89<span>/mo</span></div>
+          <ul>
+            <li>1-bedroom apartment</li>
+            <li>Furniture &amp; appliances</li>
+            <li>Drive-up available</li>
+          </ul>
+          <a href="#quote" class="btn btn-block">Reserve</a>
+        </div>
+      </div>
+
+      <div class="unit-card">
+        <div class="unit-visual">
+          <div class="size">10 × 20</div>
+          <div class="dim">200 sq ft • Large</div>
+        </div>
+        <div class="unit-body">
+          <div class="price">$139<span>/mo</span></div>
+          <ul>
+            <li>2–3 bedroom home</li>
+            <li>Vehicle or boat storage</li>
+            <li>Wide drive-up doors</li>
+          </ul>
+          <a href="#quote" class="btn btn-block">Reserve</a>
+        </div>
+      </div>
+
+      <div class="unit-card">
+        <div class="unit-visual">
+          <div class="size">10 × 30</div>
+          <div class="dim">300 sq ft • X-Large</div>
+        </div>
+        <div class="unit-body">
+          <div class="price">$189<span>/mo</span></div>
+          <ul>
+            <li>Full house of furniture</li>
+            <li>Business inventory</li>
+            <li>Vehicles &amp; equipment</li>
+          </ul>
+          <a href="#quote" class="btn btn-block">Reserve</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container about-inner">
+    <div class="about-visual">
+      <div>
+        <div class="big-icon">🏬</div>
+        <h3>Locally Owned &amp; Operated</h3>
+        <p>Proudly serving the White Lake community since 2023.</p>
+      </div>
+    </div>
+    <div class="about-text">
+      <h2>Your Trusted Neighborhood Storage Partner</h2>
+      <p>At White Lake Storage Units, we know your belongings matter. That's why we offer a clean, straightforward, and personally managed facility you can count on — with friendly service every step of the way.</p>
+      <ul class="check-list">
+        <li><span class="tick">✓</span> Convenient drive-up access to your unit</li>
+        <li><span class="tick">✓</span> Responsive, locally based support team</li>
+        <li><span class="tick">✓</span> Simple 6-month and year-long lease options</li>
+        <li><span class="tick">✓</span> Affordable rates with no hidden fees</li>
+        <li><span class="tick">✓</span> Access available by appointment</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Get In Touch</span>
+      <h2>Visit or Contact Us</h2>
+      <p>Questions about availability or sizing? We're here to help.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Facility Information</h3>
+        <div class="contact-item">
+          <div class="ci-icon">📍</div>
+          <div><strong>Address</strong><span>E6871 White Lake Rd</span></div>
+        </div>
+        <div class="contact-item">
+          <div class="ci-icon">📞</div>
+          <div><strong>Phone</strong><span>(920) 250-2944</span></div>
+        </div>
+        <div class="contact-item">
+          <div class="ci-icon">🕒</div>
+          <div style="width:100%;">
+            <strong>Hours</strong>
+            <table class="hours-table">
+              <tr><td>Access &amp; Office</td><td>By Appointment Only</td></tr>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="map-box">
+        <div class="big-icon">🗺️</div>
+        <h3>Conveniently Located</h3>
+        <p>Find us on White Lake Rd. Call ahead to schedule your appointment.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo" style="color:#fff;">
+          <div class="logo-mark">◆</div> White Lake Storage
+        </div>
+        <p>Clean and affordable self-storage serving the White Lake community since 2023.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#features">Why Us</a></li>
+          <li><a href="#units">Units &amp; Pricing</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#units">Drive-Up Units</a></li>
+          <li><a href="#units">6-Month Leases</a></li>
+          <li><a href="#units">Annual Leases</a></li>
+          <li><a href="#quote">Reserve Online</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li>E6871 White Lake Rd</li>
+          <li>(920) 250-2944</li>
+          <li>By Appointment Only</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2026 White Lake Storage Units. All rights reserved. &nbsp;|&nbsp; Privacy Policy &nbsp;|&nbsp; Terms of Service
+    </div>
+  </div>
+</footer>
+
+<script>
+  function handleReserve(e) {
+    e.preventDefault();
+    const name = document.getElementById('name').value;
+    alert('Thanks, ' + name + '! Your reservation request has been received. Our team will reach out shortly to confirm your unit.');
+    e.target.reset();
+  }
+</script>
+
+</body>
+</html>
